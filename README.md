@@ -43,3 +43,16 @@ Linux 3.18 - 6.6 (theoretically)
 ## License
 
 KernelPatch is licensed under the **GNU General Public License (GPL) 2.0** (<https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>).
+
+## Build
+linux 下载编译工具链 https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
+1、当前下载使用 https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-elf.tar.xz
+2、解压tar包到/opt/ 
+3、echo "\nexport PATH=$PATH:/opt/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-elf/bin" >> /etc/profile
+4、source /etc/profile
+
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-android-
+export TARGET_COMPILE=aarch64-none-elf-
+
+make
